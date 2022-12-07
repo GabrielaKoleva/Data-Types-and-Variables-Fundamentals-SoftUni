@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class waterOverflow_07 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int numbers = Integer.parseInt(scan.nextLine());
+
+        int capacityOfTheTank = 255;
+        int sumCapacityOfWater = 0;
+        for (int i = 0; i < numbers; i++) {
+            int quantitiesOfWater = Integer.parseInt(scan.nextLine());
+
+            if (sumCapacityOfWater + quantitiesOfWater > capacityOfTheTank){
+                System.out.println("Insufficient capacity!");
+            }else {
+                sumCapacityOfWater += quantitiesOfWater;
+            }
+        }
+        System.out.println(sumCapacityOfWater);
+
+    }
+}
