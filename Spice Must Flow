@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class spiceMustFlow_09 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int inputSpice = Integer.parseInt(scan.nextLine());
+
+        int dayCounter = 0;
+        int income = 0;
+        while (inputSpice >= 100){
+            income += inputSpice - 26;
+            dayCounter ++;
+
+            inputSpice -= 10;
+        }
+
+        if (income >= 26){
+            income -= 26;
+        }
+        System.out.println(dayCounter);
+        System.out.println(income);
+    }
+}
