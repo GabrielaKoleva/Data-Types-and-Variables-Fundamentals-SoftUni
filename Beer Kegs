@@ -1,0 +1,27 @@
+import com.sun.jdi.Value;
+
+import java.util.Scanner;
+
+public class beerKegs_08 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int numberOfKegs = Integer.parseInt(scan.nextLine());
+
+        double maxSizeOfKeg = -1.0;
+        String bestKegModel = "";
+        for (int i = 0; i < numberOfKegs; i++) {
+            String modelOfKeg = scan.nextLine();
+            double radiusOfKeg = Double.parseDouble(scan.nextLine());
+            int heightOfKeg = Integer.parseInt(scan.nextLine());
+
+            double volumeOfKeg = Math.PI * Math.pow(radiusOfKeg, 2) * heightOfKeg;
+
+            if (volumeOfKeg > maxSizeOfKeg) {
+                maxSizeOfKeg = volumeOfKeg;
+                bestKegModel = modelOfKeg;
+            }
+        }
+        System.out.println(bestKegModel);
+    }
+}
