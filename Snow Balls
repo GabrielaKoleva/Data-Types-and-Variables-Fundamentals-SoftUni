@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class snowBalls_11 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int number = Integer.parseInt(scan.nextLine());
+
+        double theBestValueOfSnowBall = -1;
+        int bestSnowBallSnow = 0;
+        int bestSnowBallTime = 0;
+        int bestSnowBallQuality = 0;
+        for (int i = 0; i < number; i++) {
+            int snowballSnow = Integer.parseInt(scan.nextLine());
+            int snowballTime = Integer.parseInt(scan.nextLine());
+            int snowballQuality = Integer.parseInt(scan.nextLine());
+
+            double valueOfSnowBall = Math.pow((snowballSnow / snowballTime), snowballQuality);
+
+            if (theBestValueOfSnowBall < valueOfSnowBall) {
+                theBestValueOfSnowBall = valueOfSnowBall;
+                bestSnowBallSnow = snowballSnow;
+                bestSnowBallTime = snowballTime;
+                bestSnowBallQuality = snowballQuality;
+            }
+        }
+
+            System.out.printf("%d : %d = %.0f (%d)",bestSnowBallSnow,
+                    bestSnowBallTime,theBestValueOfSnowBall,bestSnowBallQuality);
+    }
+}
