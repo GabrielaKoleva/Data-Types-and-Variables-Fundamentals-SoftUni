@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class floatingEquality_03 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        double eps = 0.000001;
+        double numberFirst = Double.parseDouble(scan.nextLine());
+        double numberSecond = Double.parseDouble(scan.nextLine());
+
+        boolean isEps = Math.abs(numberFirst - numberSecond) < eps;
+
+        if (isEps){
+            System.out.println("True");
+        }else {
+            System.out.println("False");
+        }
+
+    }
+}
