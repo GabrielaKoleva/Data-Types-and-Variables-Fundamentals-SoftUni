@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class dataTypeFinder_01 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+
+       String input = "";
+
+       while (true){
+           input = scan.nextLine();
+
+           if (input.equals("END")){
+               break;
+           }
+
+           boolean isInteger = true;
+           try {
+               int integer = Integer.parseInt(input);
+           }catch (NumberFormatException e){
+               isInteger = false;
+           }
+
+           boolean isDoub = true;
+           try {
+               double doub = Double.parseDouble(input);
+           }catch (NumberFormatException e){
+               isDoub = false;
+           }
+
+           if (isInteger){
+               System.out.printf("%s is integer type%n", input);
+           }else if (isDoub){
+               System.out.printf("%s is floating point type%n", input);
+           }else if (input.length()==1){
+               System.out.printf("%s is character type%n", input);
+           }else if (input.equalsIgnoreCase("true")
+                   || input.equalsIgnoreCase("false")){
+               System.out.printf("%s is boolean type%n", input);
+           }else {
+               System.out.printf("%s is string type%n", input);
+           }
+       }
+    }
+}
